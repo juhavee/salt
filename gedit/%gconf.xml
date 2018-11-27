@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<gconf>
+        <entry name="scheme" mtime="1543283951" type="string">
+                <stringvalue>cobalt</stringvalue>
+        </entry>
+</gconf>
