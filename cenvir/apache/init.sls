@@ -1,10 +1,5 @@
-lamp:
-  pkg.installed:
-    - pkgs:
-      - apache2
-      - libapache2-mod-php
-      - mariadb-client
-      - mariadb-server
+apache2:
+  pkg.installed
 
 /var/www/html/index.html:
  file.managed:
@@ -30,10 +25,6 @@ lamp:
   file.managed:
     - source: salt://apache/hosts
 
-/etc/apache2/mods-available/php7.2.conf:
-  file.managed:
-    - source: salt://php/php7.2.conf
-
 apache2service:
   service.running:
     - name: apache2
@@ -41,4 +32,3 @@ apache2service:
       - file: /etc/apache2/mods-enabled/userdir.conf
       - file: /etc/apache2/mods-enabled/userdir.load
       - file: /etc/apache2/sites-enabled/test.example.com.conf
-      - file: /etc/apache2/mods-available/php7.2.conf
